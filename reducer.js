@@ -1,0 +1,71 @@
+import storages from "./util/storages.js"
+
+
+const init ={
+      todos: storages.get(),
+      filter: 'all',
+      filters: {
+        all:()=> true,
+        active:todo => !todo.completed,
+        completed:todo => todo.completed
+
+      },
+      editIndex: null
+
+}
+
+const actions ={
+
+        add({todos} ,title){
+            if(title){
+                todos.push({title,completed:false})
+                storages.set(todos)
+            }
+        },
+        toggle({todos} ,index){
+            const todo = todos[index]
+            todo.completed = !todo.completed
+            storages.set(todos)
+        },
+        toggleALL({todos} , completed){
+            todos.forEach(todo => todo.completed = completed)
+          
+            storages.set(todos)
+        },
+        destroy({todos},index){
+          todos.splice(index,1)
+          storages.set(todos)
+        },
+        switchFilter(state , filter){
+            state.filter = filter
+        },
+        clearCompleted(state){
+            state.todos = state.todos.filter(state.filters.active)
+            storages.set(state.todos)
+        },
+        startEdit(state,index){
+            state.editIndex = index
+
+        },
+        endEdit(state,title){
+            if(state.editIndex !== null){
+                if(title){
+                    state.todos[state.editIndex].title = title
+                    storages.set(state.todos)
+                }else{
+                    this.destroy(state,state.editIndex)
+                }
+                state.editIndex = null  
+            }
+        },
+        cancelEdit(state)
+        {
+            state.editIndex = null
+        }
+
+} 
+export default function reducer(state = init,action,args){
+        actions[action] && actions[action](state,...args)
+            return state
+    
+}
