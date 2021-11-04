@@ -14,7 +14,7 @@ export default function time(){
   
 
 
-    return `${month +1}/${day}/${Year} ${h<10?`0:${h}}`:h}:${m<10?`0:${m}}`:m}`;
+    return `${month +1}/${day}/${Year} ${h<10?`0${h}`:h}:${m<10?`0${m}`:m}`;
 
                 
 }
