@@ -23,8 +23,8 @@ button {
 body {
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;
-	background: #ff976a;
 
+	background: url(../img/ef.jpg) 0px 0px/1920px auto;
 
 	color: #4d4d4d;
 	min-width: 230px;
@@ -75,15 +75,25 @@ body {
 	width: 132%;
     left: -87px;
 	font-size: 100px;
-	font-weight: 100;
+	font-weight: 600;
 	text-align: center;
-	color: rgb(41, 55, 73);
+
+	color: #af5b5e;
+
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	text-rendering: optimizeLegibility;
 	font-family: Boing, Noto, "Noto Sans JP", "Open Sans", sans-serif;
 }
-
+.todoapp h1::after {
+	content: "";
+	position: absolute;
+	bottom:-33px;
+	left: 211px;
+	background-color: #af5b5e;
+	width: 314px;
+	height: 6px;
+}
 .new-todo,
 .edit {
 	position: relative;
@@ -158,7 +168,7 @@ body {
 .todo-list li {
 	position: relative;
 	font-size: 24px;
-	border-bottom: 1px solid #ededed;
+	border-bottom: 1px solid #ccc;
 
 }
 
@@ -415,9 +425,19 @@ html .clear-completed:active {
 		top: 127px
 	;
 }
-
+.img2{
+	left:37px
+}
 .img img{
 	width: 100%;
 	height: auto;
 	border-radius: 8px;
+}
+
+.time-appear{
+	font-size: 16px;
+	font-weight:600;
+	color: #fff;
+	text-align: center;
+	background-color:#af5b5e
 }

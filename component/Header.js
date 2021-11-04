@@ -10,7 +10,7 @@ function Header(){
 
     return html`
                   <header class="header">
-                 <h1>Todos App</h1>
+                 <h1>TODOS</h1>
                    <input class="new-todo" 
                    placeholder="What needs to be done?"
                     autofocus

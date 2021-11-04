@@ -17,13 +17,7 @@ function app({ todos }){
         ${todos.length > 0 && TodoList()}
         ${todos.length > 0 && Footer()}
 
-        </section>
-        <div class="day">
-    ${time()}</div>
-           
-     </div>
-     <div class="img">
-     <img src="./img/img.jpg">
+        </section>        
      </div>
     `
 }

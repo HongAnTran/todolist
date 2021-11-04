@@ -22,9 +22,9 @@ function TodoItem({todo ,index,editIndex}){
         </div>
         <input class="edit" value="${todo.title}"
         onkeyup="event.keyCode === 13 && dispatch('endEdit',this.value.trim()) || event.keyCode === 27 && dispatch('cancelEdit') "
-        onblur="dispatch('endEdit',this.value.trim())"
-        
+        onblur="dispatch('endEdit',this.value.trim())"   
         >
+      <div class="time-appear">${todo.time}</div>
      </li>
     `
 }

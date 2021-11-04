@@ -1,5 +1,5 @@
 import storages from "./util/storages.js"
-
+import time from "./component/time.js"
 
 const init ={
       todos: storages.get(),
@@ -13,12 +13,11 @@ const init ={
       editIndex: null
 
 }
-
 const actions ={
 
         add({todos} ,title){
             if(title){
-                todos.push({title,completed:false})
+                todos.push({title,completed:false,time:time()})
                 storages.set(todos)
             }
         },
